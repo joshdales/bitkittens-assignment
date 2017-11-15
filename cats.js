@@ -1,8 +1,9 @@
-document.addEventListener('DOMFullyLoaded', function() {
+document.addEventListener('DOMContentLoaded', function() {
+  var summonCats = document.querySelector('.summon-cats');
+  console.log(summonCats);
 
-  var summonCats = document.selectElementByClass('summon-cats');
-
-
-
+  summonCats.addEventListener('click', function(e) {
+    console.log("Summoning Cats");
+  });
 
 });
