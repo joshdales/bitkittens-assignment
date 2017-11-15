@@ -11,13 +11,16 @@ document.addEventListener('DOMContentLoaded', function() {
       method: 'GET',
     }).done(function(data) {
         var cats = data.cats
-        cats.forEach(function(cat) {
+        var catPics = cats.map(function(cat) {
           var image = document.createElement('img');
           image.src = cat.photo;
           image.alt = "Photo of " + cat.name;
-          console.log(image);
-          cat1.append(image);
+          return image;
         });
+
+        for(i=0; i<catPics.length; i++ ){
+          catBoxes[i].append(catPics[i])
+        }
       })
   });
 
